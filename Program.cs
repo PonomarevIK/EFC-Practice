@@ -13,28 +13,28 @@ public class Program
         // Create
         using (HrDbContext context = new HrDbContext())
         {
-            //// Новый регион
-            //Region antarctica = new() { RegionName = "Antarctica" };
-            //context.Regions.Add(antarctica);
+            // Новый регион
+            Region antarctica = new() { RegionName = "Antarctica" };
+            context.Regions.Add(antarctica);
 
-            //// Новые страны
-            //Country wilkesLand = new() { Region = antarctica, CountryId = "WL", CountryName = "Wilkes Land" };
-            //Country enderbyLand = new() { Region = antarctica, CountryId = "EL", CountryName = "Enderby Land" };
-            //Country spain = new() { RegionId = 1, CountryId = "SP", CountryName = "Spain" };
-            //context.Countries.AddRange(wilkesLand, enderbyLand, spain);
+            // Новые страны
+            Country wilkesLand = new() { Region = antarctica, CountryId = "WL", CountryName = "Wilkes Land" };
+            Country enderbyLand = new() { Region = antarctica, CountryId = "EL", CountryName = "Enderby Land" };
+            Country spain = new() { RegionId = 1, CountryId = "SP", CountryName = "Spain" };
+            context.Countries.AddRange(wilkesLand, enderbyLand, spain);
 
-            //// Новые филиалы в Антарктике и Германии
-            //Location locationWL = new() { Country = wilkesLand, StreetAddress = "12 Icy Road", City = "Iceford" };
-            //context.Locations.Add(locationWL);
+            // Новые филиалы в Антарктике и Германии
+            Location locationWL = new() { Country = wilkesLand, StreetAddress = "12 Icy Road", City = "Iceford" };
+            context.Locations.Add(locationWL);
 
-            //Location locationDE = new() { CountryId = "DE", StreetAddress = "134 Schnitzel Strasse", StateProvince = "Sachsen", City = "Dresden" };
-            //context.Locations.Add(locationDE);
+            Location locationDE = new() { CountryId = "DE", StreetAddress = "134 Schnitzel Strasse", StateProvince = "Sachsen", City = "Dresden" };
+            context.Locations.Add(locationDE);
 
-            //// У работника с 112 родился новый ребёнок
-            //Dependent newborn = new() { FirstName = "Jonathan", LastName = "Doe", Relationship = "Child", EmployeeId = 112 };
-            //context.Dependents.Add(newborn);
+            // У работника с 112 родился новый ребёнок
+            Dependent newborn = new() { FirstName = "Jonathan", LastName = "Doe", Relationship = "Child", EmployeeId = 112 };
+            context.Dependents.Add(newborn);
 
-            //context.SaveChanges();
+            context.SaveChanges();
         }
 
         // Read
